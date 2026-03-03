@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alfaisal University & Manifest XR | Strategic Collaboration</title>
+
+  <style>
+    :root{
+      --au-primary: #00467F;   
+      --au-gold: #B4975A;      
+      --au-accent: #002D56;
+      --au-cream: #F8F9FA;     
+      --text-dark: #1A1A1A;    
+      --text-light: #595959;   
+      --white: #ffffff;
+      --shadow: 0 4px 25px rgba(0, 70, 127, 0.12);
+      --radius: 4px;           
+      --max: 1100px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--au-cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+
+    .top-announcement {
+      background: var(--au-primary);
+      color: var(--au-gold);
+      text-align: center;
+      padding: 12px 0;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 2px solid var(--au-gold);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .page{ max-width: var(--max); margin: 0 auto; padding: 20px 20px 80px; }
+
+    .hero-container { 
+      width: 100%;
+      background: linear-gradient(rgba(0, 70, 127, 0.6), rgba(0, 0, 0, 0.8)), url('university-banner.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      margin-bottom: 30px;
+      box-shadow: var(--shadow);
+      color: white;
+      text-align: center;
+      border-bottom: 8px solid var(--au-gold);
+    }
+    .hero-container h0 { font-size: 3rem; margin: 0; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; line-height: 1.1; max-width: 950px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+    .hero-tagline { font-size: 1.1rem; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 20px; font-weight: 600; color: var(--au-gold); text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
+
+    .banner{ background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; margin-bottom: 30px; }
+    .banner-inner{ padding: 25px 45px; display: flex; gap: 30px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    .logo-row{ display: flex; align-items: center; gap: 24px; }
+    .logo-slot{ width: 140px; height: 75px; display: flex; align-items: center; justify-content: center; }
+    .logo-slot img{ width: 100%; height: 100%; object-fit: contain; }
+    .divider { width: 1px; height: 40px; background: #eee; }
+    .header-text { text-align: right; }
+    .header-text h1 { margin: 0; font-size: 20px; color: var(--au-primary); text-transform: uppercase; letter-spacing: 1px; }
+    .header-text p { margin: 0; font-size: 11px; font-weight: 700; color: var(--au-gold); text-transform: uppercase; }
+
+    .card{ background: var(--white); border-radius: var(--radius); margin-bottom: 30px; overflow: hidden; box-shadow: var(--shadow); }
+    .card-inner{ padding: 50px; }
+    h2{ font-size: 20px; color: var(--au-primary); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1.5px; position: relative; padding-bottom: 12px; border-bottom: 1px solid #eee; }
+    h2::after { content: ''; position: absolute; left: 0; bottom: -1px; width: 80px; height: 3px; background: var(--au-gold); }
+    h3 { color: var(--au-primary); font-size: 18px; margin-top: 30px; margin-bottom: 15px; }
+
+    .feature-list { list-style: none; padding: 0; }
+    .feature-list li { padding-left: 30px; position: relative; margin-bottom: 12px; font-size: 15px; }
+    .feature-list li::before { content: '→'; position: absolute; left: 0; color: var(--au-gold); font-weight: 800; }
+
+    /* Media Containers */
+    .media-item { background: #000; border-radius: var(--radius); overflow: hidden; position: relative; margin: 20px 0; border-bottom: 5px solid var(--au-gold); }
+    .media-label { position: absolute; top: 15px; left: 15px; background: var(--au-primary); color: white; padding: 6px 16px; font-size: 10px; font-weight: 700; text-transform: uppercase; z-index: 10; letter-spacing: 1px; }
+    
+    /* Horizontal Video */
+    .widescreen video { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
+    
+    /* Vertical Video Styling (640x1138) */
+    .vertical-video { width: 100%; max-width: 380px; margin: 20px auto; }
+    .vertical-video video { width: 100%; aspect-ratio: 640 / 1138; display: block; object-fit: cover; }
+
+    .media-caption { padding: 15px 20px; background: #fff; font-size: 13px; color: var(--text-light); border-top: 1px solid #eee; }
+
+    .table-container { overflow-x: auto; margin-top: 25px; border-radius: var(--radius); border: 1px solid #eee; }
+    .table{ width: 100%; border-collapse: collapse; background: white; }
+    .table th{ background: var(--au-primary); text-align: left; padding: 20px; font-size: 11px; color: white; text-transform: uppercase; letter-spacing: 1.5px; }
+    .table td{ padding: 20px; border-bottom: 1px solid #eee; font-size: 14px; }
+    .money{ font-family: 'Courier New', monospace; font-weight: 700; text-align: right; color: var(--au-primary); font-size: 16px; }
+    .total-row { background: var(--au-cream); font-weight: 800; border-top: 3px solid var(--au-gold); }
+
+    .cta-block { background: var(--au-primary); color: white; padding: 80px 40px; border-radius: var(--radius); text-align: center; border-top: 8px solid var(--au-gold); margin-top: 50px; }
+    .btn { display: inline-block; background: var(--au-gold); color: white; padding: 20px 50px; border-radius: var(--radius); font-weight: 700; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
+
+    @media (max-width: 768px) { .hero-container h0 { font-size: 2.2rem; } .banner-inner { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+
+<body>
+  <div class="top-announcement">Strategic Collaboration Proposal | Alfaisal University × Manifest XR</div>
+
+  <main class="page">
+    
+    <div class="hero-container">
+      <div class="hero-tagline">Innovation in Game Design & Immersive Tech</div>
+      <h0>Driving Industry-Relevant Education at Alfaisal University</h0>
+      <p style="margin-top: 25px; opacity: 0.9; font-weight: 600; text-transform: uppercase; letter-spacing: 3px; border: 1px solid var(--au-gold); padding: 10px 25px;">Future Classroom & TASI Ecosystem</p>
+    </div>
+
+    <header class="banner">
+      <div class="banner-inner">
+        <div class="logo-row">
+          <div class="logo-slot"><img src="alfaisal-logo.png" alt="Alfaisal University"></div>
+          <div class="divider"></div>
+          <div class="logo-slot"><img src="manifest-logo.jpeg" alt="Manifest XR"></div>
+        </div>
+        <div class="header-text">
+          <p>Strategic Partnership</p>
+          <h1>Immersive Innovation Hub</h1>
+        </div>
+      </div>
+    </header>
+
+    <article class="card">
+      <div class="card-inner">
+        <h2>01. Executive Summary</h2>
+        <p>Manifest XR proposes a strategic partnership to enhance the <strong>Game Design program</strong> and broader university initiatives in immersive technologies. This collaboration leverages the <strong>Future Classroom</strong> and <strong>TASI AI ecosystem</strong> to position Alfaisal University as a regional leader in serious game innovation.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-inner">
+        <h2>02. The Future Classroom: Purpose-Built for HE</h2>
+        <p>Specifically designed for Higher Education and industry applications, this environment enables students to prototype and validate simulations in immersive settings.</p>
+        
+        <div class="media-item widescreen">
+            <div class="media-label">Classroom Showcase</div>
+            <video autoplay muted loop playsinline controls>
+              <source src="immersive-lab.mp4" type="video/mp4">
+            </video>
+            <div class="media-caption">Future Classroom Implementation: 360° shared environments and holographic workstations.</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-inner">
+        <h2>03. Cross-Faculty Innovation</h2>
+        <p>The ecosystem supports interdisciplinary serious games bridging game design with healthcare and technology. Below is a validation of the immersive impact:</p>
+        
+        <div class="media-item vertical-video">
+            <div class="media-label">Vertical Showcase</div>
+            <video autoplay muted loop playsinline controls>
+              <source src="validation-video.mp4" type="video/mp4">
+            </video>
+            <div class="media-caption">Native 640x1138 Resolution Playback</div>
+        </div>
+
+        <ul class="feature-list">
+          <li><strong>Medical Faculty:</strong> Virtual anatomy and surgical simulations.</li>
+          <li><strong>STEM Faculty:</strong> 3D molecular design and collaborative engineering.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-inner">
+        <h2>04. Financial Proposal: System Integration</h2>
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Investment Area</th>
+                <th style="text-align:right">Enhanced Tier (SAR)</th>
+                <th style="text-align:right">Advanced Tier (SAR)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Initial Setup (CapEx)</strong><br><small>Infrastructure, Immersive Room, Media Server, TASI Core</small></td>
+                <td class="money">SR 1,700,175.00</td>
+                <td class="money">SR 2,206,425.00</td>
+              </tr>
+              <tr>
+                <td><strong>Annual License (OpEx)</strong><br><small>TASI AI nodes and Curriculum updates</small></td>
+                <td class="money">SR 288,140.00</td>
+                <td class="money">SR 350,000.00</td>
+              </tr>
+              <tr class="total-row">
+                <td style="padding: 20px;">TOTAL IMPLEMENTATION</td>
+                <td class="money" style="padding: 20px;">SR 1,988,315.00</td>
+                <td class="money" style="padding: 20px;">SR 2,556,425.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+
+    <section class="cta-block">
+      <h2 style="color: white; border: none; padding: 0; margin-bottom: 25px;">Elevate Immersive Innovation</h2>
+      <a href="mailto:alex@manifestrealityxr.com" class="btn">Initiate MoU Discussion</a>
+    </section>
+
+    <footer style="text-align: center; padding: 60px 0; font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">
+      &copy; 2026 Manifest XR | Prepared for Alfaisal University.
+    </footer>
+  </main>
+</body>
+</html>
